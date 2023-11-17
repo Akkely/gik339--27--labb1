@@ -3,24 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Lägg in i HTML-head: -->
+    
+     <link rel="stylesheet" href="/style.CSS">
+
+
     <title>Labb 1 - Grupp 27</title>
 </head>
 <body>
     <h2 class="textTitle">Labb 1 - Grupp 27</h2>
     <div class="container"> <!-- boxen som håller allt -->
-        <input class ="textfieldOne" id="color" type="text" name="color">Färg: 
+        
         <!-- en input-klass med attribut text. Name och id är color och klassen är textfield. -->
-
-        <input class="textfieldTwo" id="content" type="text" name="content">Content:
+        <label for="color">Färg: </label>
+        <input type="text" id="color" name="color" class ="textfield"><br>
+        
+        
         <!-- en input-klass med attribut text. Name och id är content och klassen är textfield. -->
-
-        <input class="checkbox" id="divStyle" type="checkbox" name="divStyle">Checkbox: 
+        <label for="content">Content:</label>
+        <input type="text" id="content" name="content" class=”textfield”><br>
+        
+        
         <!-- en input-klass med attribut checkbox. Name och id är divStyle och klassen är checkbox -->
+        <label for="divStyle">Checkbox:</label>
+        <input type="checkbox" id="divStyle" name="divStyle" class="checkbox"><br>
      
         <button class = "deleteButton" id="delete" name = "delete">Ta bort</button>
+        
+        <div id="dynamicDisplay">div som egentligen ska vara tom</div>
     </div>
+    <!-- <div id="output">test för att se den</div> -->
+    
+    
     <script defer src="script-body.js"></script> <!-- scriptfilen som hämtas från en extern fil. -->
 </body>
 </html>
+
 
 
