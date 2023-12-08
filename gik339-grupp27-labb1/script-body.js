@@ -37,21 +37,17 @@ function handleInputEvent(e) {
 inputFields.forEach(field => field.addEventListener('input', handleInputEvent));
 
 // Lägger till en eventlyssnare på checkboxen för att hantera förändringar
+
 divStyleCheckbox.addEventListener('change', function() {
-  // Kontrollerar om checkboxen är ikryssad
   if (this.checked) {
-    // Rensar befintligt innehåll i dynamicDisplay
-    dynamicDisplay.innerHTML = '';
-    // Skapar ett nytt div-element
-    const newElement = document.createElement('div');
-    // Lägger till en klass till det nya elementet
-    newElement.classList.add('new-element');
-    // Sätter bakgrundsfärgen på det nya elementet baserat på värdet i colorField
-    newElement.style.backgroundColor = colorField.value;
-    // Sätter innehållet i det nya elementet baserat på värdet i contentField
-    newElement.innerHTML = contentField.value;
-    // Lägger till det nya elementet i dynamicDisplay
-    dynamicDisplay.appendChild(newElement);
+    // Sätter bakgrundsfärgen på dynamicDisplay baserat på värdet i colorField
+    dynamicDisplay.style.backgroundColor = colorField.value;
+    // Sätter innehållet i dynamicDisplay baserat på värdet i contentField
+    dynamicDisplay.innerHTML = contentField.value;
+  } else {
+    // Återställer dynamicDisplay till standardinställningar när checkboxen inte är ikryssad
+    dynamicDisplay.style.backgroundColor = ''; // Eller sätt en standardfärg
+    dynamicDisplay.innerHTML = ''; // Eller sätt standardtext
   }
 });
 
